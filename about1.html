@@ -1,0 +1,212 @@
+<!-- about1.html -->
+<section class="about-section py-5">
+    <div class="container">
+        <!-- 배경 요소 추가 -->
+        <div class="tiktok-bg-element element-1"></div>
+        <div class="tiktok-bg-element element-2"></div>
+        
+        <!-- 제목 섹션 -->
+        <div class="text-center mb-5" data-aos="fade-up">
+            <div class="tiktok-icon mx-auto">
+                <i class="fab fa-tiktok"></i>
+            </div>
+            <h2 class="section-title">ANOV <span class="text-gradient">소개</span></h2>
+            <p class="lead mb-4">틱톡 크리에이터와 브랜드의 성공적인 파트너십을 위한 완벽한 솔루션</p>
+        </div>
+        
+        <!-- 콘텐츠 섹션 -->
+        <div class="row align-items-stretch">
+            <!-- 왼쪽: 이미지/그래픽 영역 -->
+            <div class="col-lg-5 mb-4 mb-lg-0 d-flex" data-aos="fade-right">
+                <div class="about-image-wrapper position-relative">
+                    <div class="about-image-box">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=480&q=80" alt="ANOV" class="img-fluid rounded-3 shadow">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 오른쪽: 텍스트 콘텐츠 -->
+            <div class="col-lg-7 d-flex" data-aos="fade-left">
+                <div class="about-content-wrapper d-flex flex-column h-100">
+                    <div class="about-card mb-4">
+                        <div class="about-card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="about-card-content">
+                            <h3 class="about-card-title">틱톡 마케팅 전문가</h3>
+                            <p class="mb-0">
+                                ANOV는 틱톡 콘텐츠 제작 및 마케팅 전문 에이전시로, 크리에이터와 브랜드 간의 효과적인 협업을 통해
+                                Z세대를 타겟으로 한 바이럴 마케팅을 실현합니다.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-card mb-4">
+                        <div class="about-card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="about-card-content">
+                            <h3 class="about-card-title">AI 기반 데이터 솔루션</h3>
+                            <p class="mb-0">
+                                최신 트렌드 분석과 AI 기반 데이터 솔루션을 활용하여 브랜드에 최적화된 인플루언서를 매칭하고,
+                                틱톡 알고리즘을 고려한 콘텐츠 전략을 수립합니다.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="about-card-content">
+                            <h3 class="about-card-title">크리에이터 성장 지원</h3>
+                            <p class="mb-0">
+                                또한 크리에이터의 지속적인 성장을 위한 전문적인 교육과 지원 시스템을 갖추고 있으며,
+                                다양한 브랜드와의 협업 기회를 제공합니다.
+                            </p>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 추가 스타일 -->
+<style>
+.about-section {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-image-wrapper {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.about-image-box {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    height: auto;
+    width: 100%;
+}
+
+.about-image-box img {
+    transition: transform 0.5s ease;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-image-box:hover img {
+    transform: scale(1.05);
+}
+
+.about-stats-card {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: rgba(18, 18, 18, 0.9);
+    border: 1px solid rgba(254, 44, 85, 0.3);
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    backdrop-filter: blur(10px);
+}
+
+.about-stat-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(254, 44, 85, 0.1);
+    color: var(--primary-color);
+    border-radius: 12px;
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.about-card {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-color: rgba(254, 44, 85, 0.3);
+}
+
+.about-card-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(254, 44, 85, 0.1), rgba(37, 244, 238, 0.1));
+    color: var(--primary-color);
+    border-radius: 12px;
+    margin-right: 15px;
+    font-size: 1.3rem;
+}
+
+.about-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.btn-outline-light {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: transparent;
+    color: var(--light-color);
+}
+
+.btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--light-color);
+}
+
+@media (max-width: 992px) {
+    .about-stats-card {
+        bottom: -10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 60px 0;
+    }
+    
+    .about-card {
+        flex-direction: column;
+    }
+    
+    .about-card-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+</style>

@@ -1,0 +1,698 @@
+:root {
+    --primary-color: #FE2C55; /* TikTok pink/red */
+    --secondary-color: #25F4EE; /* TikTok cyan */
+    --dark-color: #121212;
+    --light-color: #f8f9fa;
+    --gray-color: #adb5bd;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+/* Navigation */
+.navbar {
+    background-color: rgba(18, 18, 18, 0.95) !important;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: var(--light-color) !important;
+    font-weight: 500;
+    margin: 0 10px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/api/placeholder/1920/1080') no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+}
+
+.hero:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(254, 44, 85, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(37, 244, 238, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.8rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+}
+
+/* Carousel Custom Style */
+#heroCarousel .carousel-item {
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Video Replay Button Style */
+#replayBtn {
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+#replayBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Timer Progress Bar */
+.timer-progress {
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: relative;
+    margin-top: 20px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.timer-progress-bar {
+    position: absolute;
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    width: 0;
+    transition: width 0.1s linear;
+}
+
+/* TikTok Pulse Animation for Hero */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(254, 44, 85, 0.4); }
+    70% { box-shadow: 0 0 0 20px rgba(254, 44, 85, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(254, 44, 85, 0); }
+}
+
+.tiktok-icon {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(18, 18, 18, 0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    box-shadow: 0 0 0 0 rgba(254, 44, 85, 0.4);
+    animation: pulse 2s infinite;
+}
+
+.tiktok-icon i {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Buttons */
+.btn-custom {
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--dark-color);
+}
+
+.btn-custom:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.4s;
+    z-index: -1;
+}
+
+.btn-custom:hover:before {
+    left: 0;
+}
+
+/* Core Values Section */
+.core-values {
+    background-color: #0D0D0D;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.core-values:before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(254, 44, 85, 0.1) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    border-radius: 50%;
+}
+
+.value-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    padding: 40px 30px;
+    height: 100%;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.value-card:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.value-card:hover:after {
+    transform: scaleX(1);
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Featured Creators Section */
+.creators {
+    padding: 100px 0;
+    background-color: var(--dark-color);
+    position: relative;
+}
+
+.creator-card {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.creator-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.creator-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+    transition: all 0.3s ease;
+}
+
+.creator-card:hover .creator-image {
+    transform: scale(1.05);
+}
+
+.creator-stats {
+    display: flex;
+    margin-top: 10px;
+}
+
+.stat {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.stat i {
+    color: var(--secondary-color);
+    margin-right: 5px;
+}
+
+/* Services Section */
+.services {
+    padding: 100px 0;
+    background-color: #0D0D0D;
+    position: relative;
+}
+
+.services:after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(37, 244, 238, 0.1) 0%, transparent 70%);
+    bottom: -100px;
+    left: -100px;
+    border-radius: 50%;
+}
+
+.service-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.service-card:hover:before {
+    transform: scaleY(1);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(254, 44, 85, 0.1);
+    color: var(--primary-color);
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 100px 0;
+    background-color: var(--dark-color);
+}
+
+.testimonial-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px 0;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.testimonial-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-icon {
+    font-size: 2rem;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    top: -15px;
+    left: 20px;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Footer */
+footer {
+    background-color: #0D0D0D;
+    padding: 50px 0 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-heading:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    bottom: -10px;
+    left: 0;
+}
+
+.footer-link {
+    color: var(--gray-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-link:hover {
+    color: var(--light-color);
+    transform: translateX(5px);
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons li a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--light-color);
+    transition: all 0.3s ease;
+}
+
+.social-icons li a:hover {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: translateY(-5px);
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 20px;
+    margin-top: 30px;
+}
+
+/* TikTok Style Background Elements */
+.tiktok-bg-element {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.05;
+    filter: blur(30px);
+}
+
+.element-1 {
+    background-color: var(--primary-color);
+    width: 300px;
+    height: 300px;
+    top: 20%;
+    left: -150px;
+}
+
+.element-2 {
+    background-color: var(--secondary-color);
+    width: 250px;
+    height: 250px;
+    bottom: 10%;
+    right: -100px;
+}
+
+/* Stats Counter */
+.stats-counter {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.stats-counter:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary-color);
+}
+
+.counter {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+/* 비디오 로딩/에러 메시지 */
+.video-status {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    display: none;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 15px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid var(--primary-color);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .core-values, .testimonials, .services, .creators {
+        padding: 60px 0;
+    }
+    .counter {
+        font-size: 2.5rem;
+    }
+}
+
+/* 성공 사례 섹션 스타일 */
+.case-studies {
+    padding: 100px 0;
+    background-color: #0D0D0D;
+    position: relative;
+}
+
+.case-studies:before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(254, 44, 85, 0.1) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.case-card {
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+    height: 350px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.case-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.case-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.case-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 100%);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transform: translateY(70%);
+    transition: transform 0.5s ease;
+}
+
+.case-card:hover .case-overlay {
+    transform: translateY(0);
+}
+
+.case-card:hover .case-image {
+    transform: scale(1.1);
+}
+
+.case-title {
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.case-stats {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.case-stat {
+    margin-right: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.case-stat i {
+    color: var(--secondary-color);
+    margin-right: 5px;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 992px) {
+    .case-studies {
+        padding: 80px 0;
+    }
+    
+    .case-card {
+        height: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    .case-studies {
+        padding: 60px 0;
+    }
+    
+    .case-card {
+        height: 300px;
+    }
+    
+    .case-overlay {
+        padding: 20px;
+        transform: translateY(60%);
+    }
+}
+
+@media (max-width: 576px) {
+    .case-card {
+        height: 280px;
+    }
+    
+    .case-stats {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .case-stat {
+        margin-bottom: 5px;
+    }
+}

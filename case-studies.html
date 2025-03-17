@@ -1,0 +1,251 @@
+<!-- case-studies.html -->
+<section class="case-studies" id="case-studies">
+    <!-- 내부 스타일 - 각 모듈이 독립적으로 작동하도록 내장 -->
+    <style>
+        /* 성공 사례 섹션 스타일 */
+        .case-studies {
+            padding: 100px 0;
+            background-color: #0D0D0D;
+            position: relative;
+        }
+
+        .case-studies:before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(254, 44, 85, 0.1) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .case-studies .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+        }
+
+        .case-studies .section-title:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(90deg, #FE2C55, #25F4EE);
+            bottom: 0;
+            left: 0;
+        }
+
+        .case-studies .text-center .section-title:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .case-card {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 30px;
+            height: 350px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .case-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .case-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .case-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 100%);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transform: translateY(70%);
+            transition: transform 0.5s ease;
+        }
+
+        .case-card:hover .case-overlay {
+            transform: translateY(0);
+        }
+
+        .case-card:hover .case-image {
+            transform: scale(1.1);
+        }
+
+        .case-title {
+            color: white;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .case-stats {
+            display: flex;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .case-stat {
+            margin-right: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .case-stat i {
+            color: #25F4EE;
+            margin-right: 5px;
+        }
+
+        /* 반응형 스타일 */
+        @media (max-width: 992px) {
+            .case-studies {
+                padding: 80px 0;
+            }
+            
+            .case-card {
+                height: 320px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .case-studies {
+                padding: 60px 0;
+            }
+            
+            .case-card {
+                height: 300px;
+            }
+            
+            .case-overlay {
+                padding: 20px;
+                transform: translateY(60%);
+            }
+
+            .case-studies .lead.w-75 {
+                width: 100% !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .case-card {
+                height: 280px;
+            }
+            
+            .case-stats {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .case-stat {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title mx-auto">성공 사례</h2>
+            <p class="lead w-75 mx-auto">ANOV와 함께 틱톡 마케팅의 놀라운 성과를 경험한 브랜드 사례를 소개합니다</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=750&q=80" alt="화장품 브랜드 사례" class="case-image">
+                    <div class="case-overlay">
+                        <h4 class="case-title">코스메틱 브랜드 A사</h4>
+                        <p>틱톡 챌린지를 통해 신제품 출시 3주 만에 인지도 180% 상승, Z세대 타겟 고객층의 유입 300% 증가</p>
+                        <div class="case-stats">
+                            <div class="case-stat">
+                                <i class="fas fa-eye"></i>
+                                <span>1500만 뷰</span>
+                            </div>
+                            <div class="case-stat">
+                                <i class="fas fa-heart"></i>
+                                <span>52만 좋아요</span>
+                            </div>
+                            <div class="case-stat">
+                                <i class="fas fa-comment"></i>
+                                <span>12만 댓글</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1527960669566-f882ba85a4c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=750&q=80" alt="음료 브랜드 사례" class="case-image">
+                    <div class="case-overlay">
+                        <h4 class="case-title">음료 브랜드 B사</h4>
+                        <p>인플루언서 협업 캠페인으로 신제품 런칭 첫 달 판매량 250% 초과 달성, 전국 편의점 품절 사태 발생</p>
+                        <div class="case-stats">
+                            <div class="case-stat">
+                                <i class="fas fa-eye"></i>
+                                <span>2200만 뷰</span>
+                            </div>
+                            <div class="case-stat">
+                                <i class="fas fa-heart"></i>
+                                <span>78만 좋아요</span>
+                            </div>
+                            <div class="case-stat">
+                                <i class="fas fa-comment"></i>
+                                <span>15만 댓글</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=750&q=80" alt="패션 브랜드 사례" class="case-image">
+                    <div class="case-overlay">
+                        <h4 class="case-title">패션 브랜드 C사</h4>
+                        <p>시즌 컬렉션 홍보를 위한 틱톡 광고 캠페인으로 온라인 스토어 방문자 수 400% 증가, 전환율 35% 상승</p>
+                        <div class="case-stats">
+                            <div class="case-stat">
+                                <i class="fas fa-eye"></i>
+                                <span>1800만 뷰</span>
+                            </div>
+                            <div class="case-stat">
+                                <i class="fas fa-heart"></i>
+                                <span>63만 좋아요</span>
+                            </div>
+                            <div class="case-stat">
+                                <i class="fas fa-comment"></i>
+                                <span>9만 댓글</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 내부 스크립트 - AOS 리프레시와 필요한 애니메이션 적용 -->
+    <script>
+        // 페이지 로드 후 AOS 새로고침
+        document.addEventListener('DOMContentLoaded', function() {
+            // AOS가 정의되어 있는지 확인
+            if (typeof AOS !== 'undefined') {
+                setTimeout(function() {
+                    AOS.refresh();
+                }, 100);
+            }
+        });
+    </script>
+</section>
