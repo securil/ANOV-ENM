@@ -83,6 +83,61 @@ function initializeAfterLoad() {
 
 // 페이지 로드 시 실행
 document.addEventListener('DOMContentLoaded', function() {
+  // 뷰포트 전환 기능 구현
+  const mobileViewBtn = document.getElementById('mobileViewBtn');
+  const desktopViewBtn = document.getElementById('desktopViewBtn');
+  const viewport = document.querySelector('meta[name="viewport"]');
+  
+  // 현재 뷰모드 확인 및 초기화
+  let viewMode = localStorage.getItem('viewMode') || 'auto';
+  
+  // 페이지 로드 시 저장된 설정 적용
+  if (viewMode === 'desktop') {
+    setDesktopView();
+  } else if (viewMode === 'mobile') {
+    setMobileView();
+  } else {
+    // 자동 모드 (기기에 따라 자동 결정)
+    if (window.innerWidth <= 768) {
+      setMobileView();
+    } else {
+      setDesktopView();
+    }
+  }
+  
+  // 모바일 뷰 설정 함수
+  function setMobileView() {
+    viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0');
+    document.body.classList.add('mobile-view');
+    document.body.classList.remove('desktop-view');
+    mobileViewBtn.classList.add('active');
+    desktopViewBtn.classList.remove('active');
+    localStorage.setItem('viewMode', 'mobile');
+    
+    // 모바일 최적화 코드 활성화
+    document.querySelectorAll('.mobile-optimize').forEach(el => {
+      el.style.display = '';
+    });
+  }
+  
+  // 데스크톱 뷰 설정 함수
+  function setDesktopView() {
+    viewport.setAttribute('content', 'width=1280, initial-scale=1.0');
+    document.body.classList.add('desktop-view');
+    document.body.classList.remove('mobile-view');
+    desktopViewBtn.classList.add('active');
+    mobileViewBtn.classList.remove('active');
+    localStorage.setItem('viewMode', 'desktop');
+    
+    // 모바일 최적화 코드 비활성화
+    document.querySelectorAll('.mobile-optimize').forEach(el => {
+      el.style.display = 'none';
+    });
+  }
+  
+  // 버튼 클릭 이벤트 추가
+  mobileViewBtn.addEventListener('click', setMobileView);
+  desktopViewBtn.addEventListener('click', setDesktopView);
   try {
     // AOS 애니메이션 초기화
     AOS.init({
@@ -122,4 +177,31 @@ document.addEventListener('DOMContentLoaded', function() {
   } catch (error) {
     console.error('초기화 오류:', error);
   }
+  // 모바일 디바이스 감지
+  function isMobileDevice() {
+    return (window.innerWidth <= 768);
+  }
+
+  // 이미지 및 비디오 소스 최적화
+  function optimizeMediaForMobile() {
+    if (isMobileDevice()) {
+      // 비디오 플레이어 품질 조정
+      const heroVideo = document.getElementById('heroVideo');
+      if (heroVideo && heroVideo.src.indexOf('Final.mp4') > -1) {
+        // 모바일용 저해상도 비디오로 교체 (실제 구현 시 저해상도 버전 필요)
+        heroVideo.setAttribute('data-mobile', 'true');
+        // heroVideo.src = 'mobile-video.mp4'; // 실제 저해상도 비디오 있을 경우 주석 해제
+      }
+      
+      // 배경 이미지 조정
+      document.querySelectorAll('[style*="background-image"]').forEach(el => {
+        // 배경 이미지 포지션 조정
+        el.style.backgroundPosition = 'center center';
+      });
+    }
+  }
+
+  // 페이지 로드 및 리사이즈 시 호출
+  window.addEventListener('DOMContentLoaded', optimizeMediaForMobile);
+  window.addEventListener('resize', optimizeMediaForMobile);
 });

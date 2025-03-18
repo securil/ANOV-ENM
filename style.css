@@ -696,3 +696,145 @@ footer {
         margin-bottom: 5px;
     }
 }
+/* 모바일 화면 오버플로우 수정 */
+@media (max-width: 768px) {
+    body {
+      overflow-x: hidden; /* 가로 스크롤 방지 */
+    }
+    
+    .container {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 100%;
+    }
+    
+    /* 긴 텍스트 줄바꿈 처리 */
+    p, h1, h2, h3, h4, h5, h6 {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    
+    /* 카드 크기 조정 */
+    .service-card, .value-card, .case-card, .pricing-card {
+      padding: 20px 15px;
+    }
+  }
+  
+  /* 작은 모바일 기기 (320px-375px) */
+  @media (max-width: 375px) {
+    .hero h1 {
+      font-size: 1.8rem;
+    }
+    
+    .btn-custom {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    
+    .d-flex.justify-content-center.flex-wrap {
+      flex-direction: column;
+    }
+    
+    .service-icon, .value-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+    }
+    
+    /* 가격표 조정 */
+    .pricing-price {
+      font-size: 2rem;
+    }
+  }
+  
+  /* 중간 모바일 기기 (376px-480px) */
+  @media (min-width: 376px) and (max-width: 480px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+    
+    /* 버튼 간격 조정 */
+    .gap-3 {
+      gap: 0.5rem !important;
+    }
+  }
+  
+  /* 모바일 여백 및 패딩 최적화 */
+  @media (max-width: 576px) {
+    /* 섹션 여백 줄이기 */
+    .hero, .about-section, .services, .core-values, 
+    .case-studies, .process, .pricing, .business-services, .faq {
+      padding: 40px 0;
+    }
+    
+    /* 제목 크기 조정 */
+    .hero h1 {
+      font-size: 2rem;
+    }
+    
+    .section-title {
+      font-size: 1.8rem;
+    }
+    
+    /* 리드 문단 너비 조정 */
+    .lead {
+      width: 100% !important;
+      font-size: 1rem;
+    }
+    
+    /* 카드 간격 조정 */
+    .row.g-4 {
+      --bs-gutter-x: 1rem;
+      --bs-gutter-y: 1rem;
+    }
+  }
+  /* 뷰포트 전환 토글 버튼 스타일 */
+#viewportToggle {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(18, 18, 18, 0.9);
+    border-radius: 30px;
+    padding: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    display: flex;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  #viewportToggle button {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 25px;
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  #viewportToggle button.active {
+    background: linear-gradient(90deg, #FE2C55, #25F4EE);
+    color: white;
+  }
+  
+  /* 모바일에서는 버튼 크기 조정 */
+  @media (max-width: 576px) {
+    #viewportToggle {
+      padding: 3px;
+      bottom: 15px;
+    }
+    
+    #viewportToggle button {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  }
