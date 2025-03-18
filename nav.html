@@ -29,6 +29,33 @@
       </ul>
     </div>
   </div>
+  <style>
+    @media (max-width: 768px) {
+      .navbar-collapse {
+        background-color: rgba(18, 18, 18, 0.95);
+        padding: 20px;
+        border-radius: 0 0 15px 15px;
+        margin-top: 10px;
+      }
+      
+      .navbar-nav {
+        padding-top: 10px;
+      }
+      
+      .nav-item {
+        margin-bottom: 10px;
+      }
+      
+      .nav-link {
+        padding: 8px 15px;
+        border-radius: 8px;
+      }
+      
+      .nav-link:hover {
+        background-color: rgba(254, 44, 85, 0.1);
+      }
+    }
+  </style>
 </nav>
 
 <!-- 스크롤 스크립트 수정 -->
@@ -126,3 +153,12 @@
     }
   });
 </script>
+// Bootstrap 네비게이션 토글러 작동 확인
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const navbarCollapse = document.querySelector('.navbar-collapse');
+  
+  if (navbarToggler && navbarCollapse) {
+    navbarToggler.addEventListener('click', function() {
+      navbarCollapse.classList.toggle('show');
+    });
+  }
